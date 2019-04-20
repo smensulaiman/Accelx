@@ -1,9 +1,8 @@
-package com.example.splashactivity.pages;
+package com.example.accels.pages;
 
 import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -12,24 +11,28 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatButton;
 import android.util.Base64;
 import android.view.View;
 import android.view.Window;
+import android.widget.Adapter;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.splashactivity.Item.Products;
-import com.example.splashactivity.R;
-import com.example.splashactivity.conditions.Controller;
-import com.example.splashactivity.retrofitapi.APIClient;
-import com.example.splashactivity.retrofitapi.APIInterface;
+import com.example.accels.Item.Products;
+import com.example.accels.Item.Test;
+import com.example.accels.R;
+import com.example.accels.adapter.GridAdapter;
+import com.example.accels.conditions.Controller;
+import com.example.accels.retrofitapi.APIClient;
+import com.example.accels.retrofitapi.APIInterface;
 import com.theartofdev.edmodo.cropper.CropImage;
 
 import java.io.ByteArrayOutputStream;
@@ -47,11 +50,13 @@ public class ProductsPage extends AppCompatActivity implements View.OnClickListe
     ImageView image;
     Bitmap bitmap;
     List<Products>products;
+    List<Test> demoproducts;
     Dialog dialog;
     Button camera;
     Intent intent;
     LinearLayout imageLayout;
     ImageView searchedImage;
+    GridView gridView;
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
     private static String[] PERMISSIONS_STORAGE = {
             Manifest.permission.WRITE_EXTERNAL_STORAGE
@@ -63,7 +68,7 @@ public class ProductsPage extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_products_page);
 
         verifyStoragePermissions(this);
-
+        gridView = findViewById(R.id.gridview);
         imageLayout = findViewById(R.id.imageLayout);
         searchedImage = findViewById(R.id.searchImage);
         if(bitmap != null){
@@ -132,30 +137,51 @@ public class ProductsPage extends AppCompatActivity implements View.OnClickListe
 
         APIInterface apiInterface = APIClient.getApiClient().create(APIInterface.class);
 
-        Call<List<Products>> call = apiInterface.uploadImage(Title,Image);
+        //Call<List<Products>> call = apiInterface.uploadImage(Title,Image);
+        Call<List<Test>> demos = apiInterface.demoData();
 
-        call.enqueue(new Callback<List<Products>>() {
+//        call.enqueue(new Callback<List<Products>>() {
+////            @Override
+////            public void onResponse(Call<List<Products>> call, Response<List<Products>> response) {
+////                Toast.makeText(ProductsPage.this, "response: "+response, Toast.LENGTH_SHORT).show();
+////                products = response.body();
+////                try {
+////                    dialog.dismiss();
+////                    searchedImage.setImageBitmap(bitmap);
+////                }catch (Exception e){
+////                        e.printStackTrace();
+////                }
+////            }
+////
+////            @Override
+////            public void onFailure(Call<List<Products>> call, Throwable t) {
+////                Toast.makeText(ProductsPage.this, "Faild", Toast.LENGTH_SHORT).show();
+////                try {
+////                    dialog.dismiss();
+////                    searchedImage.setImageBitmap(bitmap);
+////                }catch (Exception e){
+////                    e.printStackTrace();
+////                }
+////            }
+////        });
+
+        demos.enqueue(new Callback<List<Test>>() {
             @Override
-            public void onResponse(Call<List<Products>> call, Response<List<Products>> response) {
-                Toast.makeText(ProductsPage.this, "response: "+response, Toast.LENGTH_SHORT).show();
-                products = response.body();
-                try {
+            public void onResponse(Call<List<Test>> call, Response<List<Test>> response) {
+                if(response.isSuccessful()){
+
+                    demoproducts = response.body();
+                    GridAdapter adapter = new GridAdapter(ProductsPage.this,demoproducts);
+                    gridView.setAdapter(adapter);
                     dialog.dismiss();
                     searchedImage.setImageBitmap(bitmap);
-                }catch (Exception e){
-                        e.printStackTrace();
+
                 }
             }
 
             @Override
-            public void onFailure(Call<List<Products>> call, Throwable t) {
-                Toast.makeText(ProductsPage.this, "Faild", Toast.LENGTH_SHORT).show();
-                try {
-                    dialog.dismiss();
-                    searchedImage.setImageBitmap(bitmap);
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
+            public void onFailure(Call<List<Test>> call, Throwable t) {
+
             }
         });
     }
@@ -229,9 +255,9 @@ public class ProductsPage extends AppCompatActivity implements View.OnClickListe
             Uri path = data.getData();
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(),path);
+                imageLayout.setVisibility(View.VISIBLE);
                 image.setImageBitmap(bitmap);
                 image.setScaleType(ImageView.ScaleType.CENTER_CROP);
-                imageLayout.setVisibility(View.VISIBLE);
                 try {
                     dialog.show();
                 }catch (Exception e){

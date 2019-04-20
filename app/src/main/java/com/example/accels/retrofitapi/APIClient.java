@@ -1,11 +1,11 @@
-package com.example.splashactivity.retrofitapi;
+package com.example.accels.retrofitapi;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class APIClient {
 
-    private static final String BaseUrl = "https://fashion.accelx.net/";
+    private static final String BaseUrl = "https://jsonplaceholder.typicode.com";
     private static Retrofit retrofit;
 
     public static Retrofit getApiClient() {

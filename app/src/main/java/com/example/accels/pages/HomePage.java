@@ -1,9 +1,9 @@
-package com.example.splashactivity.pages;
+package com.example.accels.pages;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.example.splashactivity.R;
+import com.example.accels.R;
 
 public class HomePage extends AppCompatActivity {
 

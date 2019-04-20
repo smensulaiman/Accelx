@@ -1,9 +1,7 @@
-package com.example.splashactivity.pages;
+package com.example.accels.pages;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -18,8 +16,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.splashactivity.R;
-import com.example.splashactivity.conditions.Controller;
+import com.example.accels.R;
+import com.example.accels.conditions.Controller;
 import com.smarteist.autoimageslider.DefaultSliderView;
 import com.smarteist.autoimageslider.IndicatorAnimations;
 import com.smarteist.autoimageslider.SliderAnimations;

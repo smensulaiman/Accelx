@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.splashactivity">
+    package="com.example.accels">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -16,12 +16,12 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".pages.HomePageWithNav"
+            android:name="com.example.accels.pages.HomePageWithNav"
             android:label="@string/title_activity_home_page_with_nav"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".pages.ProductsPage" />
-        <activity android:name=".pages.HomePage" />
-        <activity android:name=".pages.SplashActivity">
+        <activity android:name="com.example.accels.pages.ProductsPage" />
+        <activity android:name="com.example.accels.pages.HomePage" />
+        <activity android:name="com.example.accels.pages.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

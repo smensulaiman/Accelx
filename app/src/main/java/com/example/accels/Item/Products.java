@@ -1,4 +1,4 @@
-package com.example.splashactivity.Item;
+package com.example.accels.Item;
 
 import com.google.gson.annotations.SerializedName;
 

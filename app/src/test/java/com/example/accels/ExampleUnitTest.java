@@ -1,4 +1,4 @@
-package com.example.splashactivity;
+package com.example.accels;
 
 import org.junit.Test;
 
