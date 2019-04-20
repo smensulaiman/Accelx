@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".pages.HomePageWithNav"
+    tools:showIn="@layout/app_bar_home_page_with_nav">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:weightSum="10"
+        android:paddingBottom="@dimen/_5sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:gravity="center"
+        >
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="8"
+        android:layout_height="match_parent"
+        android:background="@drawable/borderfullwhite"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true"
+        android:weightSum="2"
+        >
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:background="#00000000"
+            android:textSize="@dimen/_12sdp"
+            android:hint="Search For Products, Brands..."
+            android:textAlignment="center"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_weight=".20"
+            android:background="@drawable/ic_search_black_24dp"
+            />
+        <Button
+            android:id="@+id/openCamera"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_weight=".20"
+            android:background="@drawable/ic_camera_alt_black_24dp"
+            />
+    </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#C3DBD1D1"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="@dimen/_4sdp">
+
+                <com.smarteist.autoimageslider.SliderLayout
+                    android:id="@+id/imageSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_alignParentTop="true" />
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/borderfullwhite"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:src="@drawable/glob" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="GLOBAL COLLECTION"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/_8ssp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/borderfullwhite"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:src="@drawable/top" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TopUp and eStore"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/_8ssp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/borderfullwhite"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:src="@drawable/grocery" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Grocery Mohotshob"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/_8ssp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="@dimen/_5sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Mobile"
+                        android:textSize="@dimen/_10ssp"
+                        android:background="@color/sky"
+                        android:textColor="@android:color/white"
+                        android:padding="@dimen/_5sdp"
+                        />
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:fillViewport="true"
+                        android:measureAllChildren="false"
+                        android:scrollbars="none"
+                        tools:ignore="DuplicateIds">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#C3DBD1D1"
+                            android:orientation="horizontal"
+                            android:theme="@android:style/Widget.DeviceDefault.HorizontalScrollView"
+                            android:weightSum="4">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="#FDFDFD"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/_96sdp"
+                                    android:scaleType="center"
+                                    android:src="@drawable/a501" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_20ssp"
+                                    android:text="Samsung Galaxy A50"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/holo_blue_dark"
+                                    android:textSize="@dimen/_7ssp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="৳26,990"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="@dimen/_10ssp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="#FDFDFD"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/_96sdp"
+                                    android:src="@drawable/huaweip30pro" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_20ssp"
+                                    android:text="HUAWEI P30  \nPro"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/holo_blue_dark"
+                                    android:textSize="@dimen/_7ssp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="৳89,999"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="@dimen/_10ssp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="#FDFDFD"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/_96sdp"
+                                    android:src="@drawable/samsunggalaxya20" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_20ssp"
+                                    android:text="Samsung Galaxy A20"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/holo_blue_dark"
+                                    android:textSize="@dimen/_7ssp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="৳15,990"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="@dimen/_10ssp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="#FDFDFD"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/_96sdp"
+                                    android:scaleType="center"
+                                    android:src="@drawable/p30l1" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_20ssp"
+                                    android:text="HUAWEI P30  \nLite"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/holo_blue_dark"
+                                    android:textSize="@dimen/_7ssp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="৳14,999"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="@dimen/_10ssp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="#FDFDFD"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/_96sdp"
+                                    android:scaleType="center"
+                                    android:src="@drawable/a501" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_20ssp"
+                                    android:text="Samsung Galaxy A50"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/holo_blue_dark"
+                                    android:textSize="@dimen/_7ssp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="৳26,990"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="@dimen/_10ssp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="#FDFDFD"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/_96sdp"
+                                    android:src="@drawable/huaweip30pro" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_20ssp"
+                                    android:text="HUAWEI P30  \nPro"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/holo_blue_dark"
+                                    android:textSize="@dimen/_7ssp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="৳89,999"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="@dimen/_10ssp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="#FDFDFD"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/_96sdp"
+                                    android:src="@drawable/samsunggalaxya20" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_20ssp"
+                                    android:text="Samsung Galaxy A20"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/holo_blue_dark"
+                                    android:textSize="@dimen/_7ssp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="৳15,990"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="@dimen/_10ssp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_weight="1"
+                                android:background="#FDFDFD"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/_96sdp"
+                                    android:scaleType="center"
+                                    android:src="@drawable/p30l1" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_20ssp"
+                                    android:text="HUAWEI P30  \nLite"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/holo_blue_dark"
+                                    android:textSize="@dimen/_7ssp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="৳14,999"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="@dimen/_10ssp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </HorizontalScrollView>
+
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="156dp"
+                android:src="@drawable/banglalink"
+                android:layout_marginBottom="@dimen/_5ssp"
+                />
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="@dimen/_5sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Mobile"
+                        android:textSize="@dimen/_10ssp"
+                        android:background="@color/sky"
+                        android:textColor="@android:color/white"
+                        android:padding="@dimen/_5sdp"
+                        />
+
+                    <HorizontalScrollView
+                        android:id="@+id/hsv"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:fillViewport="true"
+                        android:measureAllChildren="false"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#C3DBD1D1"
+                            android:orientation="horizontal"
+                            android:weightSum="4">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="#FDFDFD"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/_96sdp"
+                                    android:scaleType="center"
+                                    android:src="@drawable/a501" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_20ssp"
+                                    android:text="Samsung Galaxy A50"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/holo_blue_dark"
+                                    android:textSize="@dimen/_7ssp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="৳26,990"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="@dimen/_10ssp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="#FDFDFD"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/_96sdp"
+                                    android:src="@drawable/huaweip30pro" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_20ssp"
+                                    android:text="HUAWEI P30  \nPro"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/holo_blue_dark"
+                                    android:textSize="@dimen/_7ssp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="৳89,999"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="@dimen/_10ssp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="#FDFDFD"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/_96sdp"
+                                    android:src="@drawable/samsunggalaxya20" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_20ssp"
+                                    android:text="Samsung Galaxy A20"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/holo_blue_dark"
+                                    android:textSize="@dimen/_7ssp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="৳15,990"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="@dimen/_10ssp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="#FDFDFD"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/_96sdp"
+                                    android:scaleType="center"
+                                    android:src="@drawable/p30l1" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_20ssp"
+                                    android:text="HUAWEI P30  \nLite"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/holo_blue_dark"
+                                    android:textSize="@dimen/_7ssp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="৳14,999"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="@dimen/_10ssp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="#FDFDFD"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/_96sdp"
+                                    android:scaleType="center"
+                                    android:src="@drawable/a501" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_20ssp"
+                                    android:text="Samsung Galaxy A50"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/holo_blue_dark"
+                                    android:textSize="@dimen/_7ssp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="৳26,990"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="@dimen/_10ssp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="1dp"
+                                android:layout_weight="1"
+                                android:background="#FDFDFD"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/_96sdp"
+                                    android:src="@drawable/huaweip30pro" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_20ssp"
+                                    android:text="HUAWEI P30  \nPro"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/holo_blue_dark"
+                                    android:textSize="@dimen/_7ssp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="৳89,999"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="@dimen/_10ssp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="#FDFDFD"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/_96sdp"
+                                    android:src="@drawable/samsunggalaxya20" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_20ssp"
+                                    android:text="Samsung Galaxy A20"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/holo_blue_dark"
+                                    android:textSize="@dimen/_7ssp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="৳15,990"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="@dimen/_10ssp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="1dp"
+                                android:layout_weight="1"
+                                android:background="#FDFDFD"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/_96sdp"
+                                    android:scaleType="center"
+                                    android:src="@drawable/p30l1" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/_20ssp"
+                                    android:text="HUAWEI P30  \nLite"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/holo_blue_dark"
+                                    android:textSize="@dimen/_7ssp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="৳14,999"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="@dimen/_10ssp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </HorizontalScrollView>
+
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+</LinearLayout>
