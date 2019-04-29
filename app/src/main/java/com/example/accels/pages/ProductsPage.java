@@ -17,15 +17,12 @@ import android.support.v7.widget.AppCompatButton;
 import android.util.Base64;
 import android.view.View;
 import android.view.Window;
-import android.widget.Adapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.accels.Item.Products;
 import com.example.accels.Item.Test;
 import com.example.accels.R;
@@ -34,11 +31,9 @@ import com.example.accels.conditions.Controller;
 import com.example.accels.retrofitapi.APIClient;
 import com.example.accels.retrofitapi.APIInterface;
 import com.theartofdev.edmodo.cropper.CropImage;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -46,7 +41,7 @@ import retrofit2.Response;
 public class ProductsPage extends AppCompatActivity implements View.OnClickListener {
 
     AppCompatButton selectBtn, upBtn;
-    TextView title;
+    TextView title,searchText;
     ImageView image;
     Bitmap bitmap;
     List<Products>products;
@@ -86,6 +81,7 @@ public class ProductsPage extends AppCompatActivity implements View.OnClickListe
         selectBtn = dialog.findViewById(R.id.selectdBtn);
         upBtn = dialog.findViewById(R.id.uploadBtn);
         image = dialog.findViewById(R.id.image);
+        searchText = findViewById(R.id.searchText);
 
         selectBtn.setOnClickListener(this);
         upBtn.setOnClickListener(this);
@@ -174,6 +170,12 @@ public class ProductsPage extends AppCompatActivity implements View.OnClickListe
                     GridAdapter adapter = new GridAdapter(ProductsPage.this,demoproducts);
                     gridView.setAdapter(adapter);
                     dialog.dismiss();
+                    imageLayout.setVisibility(View.VISIBLE);
+                    if(demoproducts.size()>1) {
+                        searchText.setText("Search results: " + demoproducts.size() + " results");
+                    }else {
+                        searchText.setText("Search result: " + demoproducts.size() + " result");
+                    }
                     searchedImage.setImageBitmap(bitmap);
 
                 }
@@ -255,7 +257,6 @@ public class ProductsPage extends AppCompatActivity implements View.OnClickListe
             Uri path = data.getData();
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(),path);
-                imageLayout.setVisibility(View.VISIBLE);
                 image.setImageBitmap(bitmap);
                 image.setScaleType(ImageView.ScaleType.CENTER_CROP);
                 try {

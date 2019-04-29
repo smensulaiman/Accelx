@@ -104,7 +104,7 @@ public class HomePageWithNav extends AppCompatActivity
             Controller.UPLOAD_IMAGE_FLAG = 0;
            startActivity(new Intent(HomePageWithNav.this,ProductsPage.class));
         } else if (id == R.id.nav_login) {
-
+            startActivity(new Intent(HomePageWithNav.this,LogInPage.class));
         } else if (id == R.id.nav_cart) {
 
         } else if (id == R.id.nav_share) {

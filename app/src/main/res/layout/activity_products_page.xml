@@ -64,15 +64,16 @@
             android:id="@+id/searchImage"
             android:layout_width="@dimen/_50ssp"
             android:layout_height="@dimen/_50ssp"
-            android:layout_margin="@dimen/_5ssp"
-            android:padding="@dimen/_2sdp"
+            android:layout_margin="5dp"
+            android:padding="2dp"
             android:scaleType="center" />
 
         <TextView
             android:id="@+id/searchText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="2dp"
+            android:layout_marginBottom="@dimen/_5ssp"
+            android:paddingLeft="@dimen/_2sdp"
             android:text="Result for searched Image:"
             android:textColor="@android:color/holo_blue_dark" />
 
